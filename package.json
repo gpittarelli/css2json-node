@@ -1,0 +1,20 @@
+{
+  "name": "postcss2json",
+  "version": "1.0.0",
+  "description": "Convert CSS to JSON",
+  "main": "index.js",
+  "bin": {
+    "postcss2json": "./cli.js"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gpittarelli/postcss2json.git"
+  },
+  "author": "George Pittarelli <g@gjp.cc>",
+  "repository": "",
+  "license": "MIT",
+  "dependencies": {
+    "postcss": "^7.0.14"
+  }
+}
