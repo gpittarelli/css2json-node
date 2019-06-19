@@ -25,5 +25,5 @@ function toNodes(node, prefix) {
 }
 
 module.exports = function postcss2json(css) {
-  return parseCSS(css).nodes.flatMap(toNodes);
+  return parseCSS(css).nodes.flatMap(function (n) { return toNodes(n); });
 };
