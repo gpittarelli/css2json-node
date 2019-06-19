@@ -1,6 +1,6 @@
 {
   "name": "postcss2json",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Convert CSS to JSON",
   "main": "index.js",
   "bin": {
