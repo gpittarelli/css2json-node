@@ -1,10 +1,12 @@
 require('./polyfill');
 var parseCSS = require('postcss').parse;
 
-function toNodes(node) {
+function toNodes(node, prefix) {
+  prefix = prefix || '';
+
   if (node.type === 'rule') {
     return [{
-      selector: node.selector,
+      selector: prefix + node.selector,
       attributes: node.nodes.map(function (decl) {
         return {
           prop: decl.prop,
@@ -13,7 +15,9 @@ function toNodes(node) {
       })
     }];
   } else if (node.type === 'atrule' && node.name === 'media') {
-    return node.nodes;
+    return node.nodes.flatMap(function (n) {
+      return toNodes(n, '@media ' + node.params + ' { ');
+    });
   } else {
     // comments, @keyframes, etc.
     return [];
